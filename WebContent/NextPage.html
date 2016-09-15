@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Quiz Creator</title>
+	<script type="text/javascript">
+		function checkSum() {
+			var tot = Number(document.getElementById("Number1").value);
+			var e = Number(document.getElementById("Easy").value);
+			var m = Number(document.getElementById("Medium").value);
+			var h = Number(document.getElementById("Hard").value);
+			if(tot == e+m+h)
+				return true;
+			else{
+				alert("Number of questions mismatch");
+				return false;
+			}
+		}
+	</script>
+</head>
+<style>
+body {background-color: lightblue;}
+h1   {text-align: center;color:white;}
+h2   {text-align: center;color:white;}
+</style>
+<body>
+<form action="QuizDisplay1" method="GET" onsubmit = "return checkSum()">
+<h1>
+Quiz Creator
+</h1>
+<h2>
+Total Questions: <input type="text" name="Number">
+<br/>
+Subject :<select name="Subject">
+  <option value="java">java</option>
+  <option value="DSA">DSA</option>
+  <option value="Maths">Maths</option>
+</select>
+<br/>
+No.of Questions: <input id="Number1" type="text" name="Number1">
+<br/>
+Easy Questions: <input id="Easy" type="text" name="Easy">
+<br/>
+Medium Questions: <input id="Medium" type="text" name="Medium">
+<br/>
+Hard Questions: <input id="Hard" type="text" name="Hard">
+<br/>
+<input type="submit" value="Next"/>
+</h2>
+</form>
+</body>
+</html>
